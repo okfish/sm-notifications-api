@@ -1,0 +1,13 @@
+# coding: utf-8
+
+# flake8: noqa
+
+# import models into model package
+from sm_notifications_api.models.errors_object import ErrorsObject
+from sm_notifications_api.models.errors_object_errors_inner import ErrorsObjectErrorsInner
+from sm_notifications_api.models.notifications_request import NotificationsRequest
+from sm_notifications_api.models.notifications_request_event import NotificationsRequestEvent
+from sm_notifications_api.models.notifications_request_event_payload import NotificationsRequestEventPayload
+from sm_notifications_api.models.order_event import OrderEvent
+from sm_notifications_api.models.order_event_positions_inner import OrderEventPositionsInner
+from sm_notifications_api.models.order_event_positions_inner_marking_code_inner import OrderEventPositionsInnerMarkingCodeInner
