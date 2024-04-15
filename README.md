@@ -129,6 +129,6 @@ Authentication schemes defined for the API:
 
 ## Author
 
-
+Oleg Rybkin aka Fish with help of OpenAPI Generator Community
 
 
