@@ -16,9 +16,10 @@ class OrderEvent(BaseModel):
     """
     OrderEvent
     """ # noqa: E501
+    changed: Optional[bool] = Field(default=False, description="Был ли изменен заказ")
     original_order_id: Optional[StrictStr] = Field(default=None, description="Идентификатор заказа в СМ (H1234567890)", alias="originalOrderId")
     positions: Optional[List[OrderEventPositionsInner]] = Field(default=None, description="Описание позиций заказа")
-    __properties: ClassVar[List[str]] = ["originalOrderId", "positions"]
+    __properties: ClassVar[List[str]] = ["originalOrderId", "changed", "positions"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -78,6 +79,7 @@ class OrderEvent(BaseModel):
 
         _obj = cls.model_validate({
             "originalOrderId": obj.get("originalOrderId"),
+            "changed": obj.get("changed"),
             "positions": [OrderEventPositionsInner.from_dict(_item) for _item in obj["positions"]] if obj.get("positions") is not None else None
         })
         return _obj
