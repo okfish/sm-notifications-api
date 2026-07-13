@@ -16,7 +16,7 @@ class OrderEvent(BaseModel):
     """
     OrderEvent
     """ # noqa: E501
-    changed: Optional[bool] = Field(default=False, description="Был ли изменен заказ")
+    changed: Optional[bool] = Field(default=None, description="Был ли изменен заказ")
     original_order_id: Optional[StrictStr] = Field(default=None, description="Идентификатор заказа в СМ (H1234567890)", alias="originalOrderId")
     positions: Optional[List[OrderEventPositionsInner]] = Field(default=None, description="Описание позиций заказа")
     __properties: ClassVar[List[str]] = ["originalOrderId", "changed", "positions"]
